@@ -19,7 +19,10 @@ public class AttributeManager : MonoBehaviour {
             if(other.gameobject.tag == "MAGIC") 
             {
                 // Do the Binary Operation
-                attributes |= MAGIC;
+                // Instead do this, Use bit Toggling
+                // attributes |= MAGIC;
+                // Here what i mean
+                attributes ^= MAGIC;
             }
 
             else if (other.gameobject.tag == "INTELLIGENCE") 
