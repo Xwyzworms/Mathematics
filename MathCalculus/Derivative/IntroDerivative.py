@@ -55,3 +55,63 @@ averageLocalScope = np.average(slope)
 
 print(f"Global Scope {mGlobalScope}")
 print(f"Average Local Slope {averageLocalScope}")
+
+#%% Derivative For NoN Linear Function
+N = 10
+x = np.linspace(-1,1,N)
+fx = x**2
+dy_dx = 2*x
+
+
+plt.plot(x,fx, label="F(x) = x**2")
+plt.title(f"Polynomial Functions ")
+plt.legend()
+plt.show()
+
+for i in range(0, N-1):
+    plt.plot([x[i],x[i+1]], [dy_dx[i],dy_dx[i+1]] )
+plt.title("The slope : ")
+plt.legend()
+plt.show()
+#%% Derivative for Another NoN Linear function
+
+N = 50
+x = np.linspace(-2,3,N)
+fx = x**3 - x**2
+dy_dx = 3*x**2 - 2*x
+
+plt.plot(x, fx, label="F(x) = x**3 - x**2")
+for i in range(0, N-1):
+    plt.plot([x[i],x[i+1]], [dy_dx[i],dy_dx[i+1]])
+plt.title(f"Another Function")
+plt.legend()
+plt.show()
+
+#%% Derivative for the Another Function
+
+N = 50
+x = np.linspace(-2,3,N)
+fx = x**4 - x**2
+dy_dx = 4*x**3 - 2*x
+
+plt.plot(x, fx, label="F(x) = x**4 - x**2")
+for i in range(0, N-1):
+    plt.plot([x[i],x[i+1]], [dy_dx[i],dy_dx[i+1]])
+plt.title(f"Another Function")
+plt.legend()
+plt.show()
+
+#%%
+
+N = 50
+x = np.linspace(-1,5,N)
+fx = x**3 
+dy_dx = 3*x**2 
+
+plt.plot(x, fx, label="F(x) =x**3")
+for i in range(0, N-1):
+    plt.plot([x[i],x[i+1]], [dy_dx[i],dy_dx[i+1]])
+plt.title(f"Another Function")
+plt.legend()
+plt.show()
+
