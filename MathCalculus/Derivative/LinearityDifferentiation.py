@@ -2,6 +2,7 @@
 import numpy as np
 import sympy as asm # NOW PLEASE DON'T MADE
 import matplotlib.pyplot
+import math
 from IPython.display import display, Math
 #%%
 x,a,b,c = asm.symbols("x,a,b,c")
@@ -34,4 +35,20 @@ display(Math("\\text{Derivative of f(x) is =>} %s" %(asm.latex(dy_f1))))
 display(Math("\\text{Derivative of g(x) is =>} %s" %(asm.latex(a*dy_f2)))) # Doing the outside a calculation
 #%%
 ## COMBINED RULES 
+### d/dx (ax**2 + b cos x) = a d/dx(x**2) + b d/dx(cos x)
 
+x,a,b = asm.symbols("x,a,b")
+f_1 = a*x**2 + b * asm.cos(x)
+f_2_1 = x**2 
+f_2_2 = asm.cos(x)
+
+d_f1 = asm.diff(f_1, x)
+d_f2_1 = asm.diff(f_2_1, x)
+d_f2_2 = asm.diff(f_2_2, x)
+
+display(Math("\\text{Derivative of f(x) is =>} %s" %(asm.latex(d_f1))))
+display(Math("\\text{Derivative of g(x) is =>} %s + %s" %(asm.latex(a*d_f2_1), asm.latex(b*d_f2_2))))
+
+
+
+# %%
